@@ -1,0 +1,15 @@
+.text-color() {
+  color: #fff;
+}
+
+body {
+  background: @background-color;
+}
+
+#main-region-wrapper, #pop-title {
+  background: transparent url("@{base-url}/images/region-bg.png") repeat top left;
+}
+
+#pop #main-region a, #pop-title a {
+  color: hsl(hue(@background-color), saturation(@background-color), 80%);
+}

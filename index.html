@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Name of yur theme -->
+  <title>Center</title>
+
+  <palette class="palette-default" name="Light" preview="#cccccc">
+  <palette class="palette-dark" name="Dark" preview="#111">
+  <palette class="palette-transparent" name="Transparent" preview="#888,#fff,#888,#fff,#888,#fff,#888,#fff,#888,#fff">
+
+  <!-- Add any styles your theme requires here -->
+  <link rel="stylesheet/less" type="text/css" href="/styles/main.less">
+  <!-- This script loads the Populr theming engine. Populr will automatically
+       remove it at runtime. -->
+  <script src="http://populr.me/assets/developers/themer.js"></script>
+  <!-- Add any javscript your theme requires here -->
+  <script src="/js/main.js"></script>
+
+</head>
+<body>
+  <!-- Put your theme's inside this script tag. The script tag will
+       prevent issues with quote escaping and invalid markup. -->
+  <script id="theme" type="text/x-handlebars-template">
+    {{#if title}}
+    <div class="pop-title-wrapper">{{{title}}}</div>
+    {{/if}}
+    <div id = "main-region-wrapper">
+      {{#region "packer" id="main-region" columns="2" column_width="340" gutter_width="20" dummy_content="I-3-m,T-1-m,V-1-m,E-1-m,D-4-m,I-3-l,T-1-l,V-1-l,E-1-l,D-4-l" default_content="I-3-m,T-1-m" max_auto_assets="0" sizes="m,l" default_size="m"}}
+
+        {{#asset "text" size="m"}}
+          {{{title}}}
+          <div class="content">
+            {{{body}}}
+          </div>
+        {{/asset}}
+
+        {{#asset "text" size="l"}}
+          {{{title}}}
+          <div class="content">
+            {{{body}}}
+          </div>
+        {{/asset}}
+
+        {{#asset "documentgroup" size="m"}}
+          {{{title}}}
+          <div class="content">
+            <ul class="documents">
+            {{#documents}}
+              <li><a href="{{original_url}}">{{title}}</a></li>
+            {{/documents}}
+            </ul>
+          </div>
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "documentgroup" size="l"}}
+          {{{title}}}
+          <div class="content">
+            <ul class="documents">
+            {{#documents}}
+              <li><a href="{{original_url}}">{{title}}</a></li>
+            {{/documents}}
+            </ul>
+          </div>
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "embedgroup" size="m" width="310"}}
+          {{{title}}}
+          <div class="content">
+          {{#embeds}}
+            <div class="embed">{{{html}}}</div>
+          {{/embeds}}
+          </div>
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "embedgroup" size="l" width="670"}}
+          {{{title}}}
+          <div class="content">
+          {{#embeds}}
+            <div class="embed">{{{html}}}</div>
+          {{/embeds}}
+          </div>
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "imagegroup" size="m"}}
+          {{{title}}}
+          <div class="content">
+          {{{imageslider contents width="310" height="232" prevnext-enabled=true fx="scrollHorz"}}}
+          </div>
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "imagegroup" size="l"}}
+          {{{title}}}
+          <div class="content">
+          {{{imageslider contents width="670" height="502"}}}
+          </div>
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "videogroup" size="m"}}
+          {{{title}}}
+          <div class="content">
+          {{{videoplayer contents width="310" height="232" resolution="medium"}}}
+          </div>
+          {{{description}}}
+        {{/asset}}
+
+        {{#asset "videogroup" size="l"}}
+          {{{title}}}
+          <div class="content">
+          {{{videoplayer contents width="670" height="502" resolution="large"}}}
+          </div>
+          {{{description}}}
+        {{/asset}}
+      {{/region}}
+    </div>
+  </script>
+</body>
+</html>
